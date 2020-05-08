@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get  'team' ,to: 'static#team'
-  get  'contact', to: 'static#contact'
-
+  resources :teams
+  resources :contacts
+  resources :sessions
   resources :users
   resources :cities
   resources :gossips 

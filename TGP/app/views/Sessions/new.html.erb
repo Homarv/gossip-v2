@@ -1,0 +1,22 @@
+<%if @user.errors.any?%>
+    <div class="alert alert-danger">
+    <ul>
+        <% @user.errors.full_messages.each do |message|%>
+        <li><%=message%></li>
+         <%end%>
+    </ul>
+    </div>
+<%end%>      
+
+<%=form_for :user, url:new_sessions_path do |f|%>
+    
+
+    <%= f.label "email"%>
+    <%= f.email_field :email%>
+
+    <%= f.label "Mot de passe"%>
+    <%= f.password_field :password%>
+
+    <%= submit_tag "Se connecter"%>
+
+<%end%>
