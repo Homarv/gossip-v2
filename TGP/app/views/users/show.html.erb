@@ -1,0 +1,10 @@
+
+     
+      <h1> <%= @user.first_name %> <%= @user.last_name %></h1>
+      <p>Age :<%= @user.age %> ans</p>
+      Ville : <%=@user.city.name%><%= link_to " Voir tous les potins de la ville", city_path(@user.city.id) %>
+
+      <p>Email :<a href=""<%= @user.email %>"><%= @user.email %></a></p>
+      <p>Description :<%= @user.description %></p>
+    
+  

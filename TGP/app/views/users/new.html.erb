@@ -1,0 +1,32 @@
+<%if @user.errors.any?%>
+    <div class="alert alert-danger">
+    <ul>
+        <% @user.errors.full_messages.each do |message|%>
+        <li><%=message%></li>
+         <%end%>
+    </ul>
+    </div>
+<%end%>      
+
+<%=form_for @user do |f|%>
+    <%= f.label "Prénom"%>
+    <%= f.text_field :first_name%>
+
+    <%= f.label "Nom de famille"%>
+    <%= f.text_field :last_name%>
+
+    <%= f.label "email"%>
+    <%= f.email_field :email%>
+
+    <%= f.label "Mot de passe"%>
+    <%= f.password_field :password%>
+
+    <%= f.label "Confirmez votre mot de passe"%>
+    <%= f.password_field :password%>
+    
+    <%= f.label :city, "Ville" %>
+    <%= f.collection_select(:city, City.all, :id, :name, {:prompt=>true}) %>
+
+    <%= submit_tag "S'inscrire"%>
+
+<%end%>

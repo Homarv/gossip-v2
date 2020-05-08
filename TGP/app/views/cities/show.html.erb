@@ -1,0 +1,10 @@
+    
+<h1> <%= @city.name %></h1>
+      
+
+<% User.where(city_id: @city.id).each do |user| %>
+      <% Gossip.where(user_id: user.id).each do |gossip| %>
+          <%= gossip.title %><br />
+          <%= gossip.user.first_name %></p><br />
+      <% end %>
+<% end %>
